@@ -1,7 +1,17 @@
 <html>
 <head>
     <script type = "text/javascript" src = "bundle.js">
-        main();
+        console.log("hello");
+         d3.csv("https://mattieraj.github.io/DojoTest/metro-bike-share-trip-data.csv", function(data) {
+        var mostPopularStartingStation = mostPopularStation(data, "Starting Station ID");
+        var mostPopularEndingStation = mostPopularStation(data, "Ending Station ID");
+        var numOfPasses = numMonthlyPass(data);
+        var distance = tripDistanceSetSpeed(data);
+        console.log("Start station" + mostPopularStartingStation);
+        console.log("Ending station" + mostPopularEndingStation);
+        console.log("Num passes" + numOfPasses);
+        console.log("Avg distance" + distance);
+    });
     </script>
 </head>
 <body>
