@@ -1,21 +1,13 @@
 <html>
 <head>
-    <script type = "text/javascript" src = "bundle.js">
-        console.log("hello");
-         d3.csv("https://mattieraj.github.io/DojoTest/metro-bike-share-trip-data.csv", function(data) {
-        var mostPopularStartingStation = mostPopularStation(data, "Starting Station ID");
-        var mostPopularEndingStation = mostPopularStation(data, "Ending Station ID");
-        var numOfPasses = numMonthlyPass(data);
-        var distance = tripDistanceSetSpeed(data);
-        console.log("Start station" + mostPopularStartingStation);
-        console.log("Ending station" + mostPopularEndingStation);
-        console.log("Num passes" + numOfPasses);
-        console.log("Avg distance" + distance);
+    <script type = "text/javascript" src = "https://d3js.org/d3.v3.min.js">
+        
+        d3.csv("https://mattieraj.github.io/DojoTest/metro-bike-share-trip-data.csv", function(data) {
+            console.log(data[0]);
     });
     </script>
 </head>
 <body>
-Which start/stop stations are most popular?
-
+Testing
 </body>
 </html>
