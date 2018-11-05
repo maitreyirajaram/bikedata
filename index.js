@@ -45,25 +45,6 @@ const tripDistanceSetSpeed = (data) => {
     return Math.round(totalDistance/noOfTrips);
 }
 
-/*const passTypesData = (data) => {
-    passTypesMap = new Map();
-    data.forEach(function(item){
-        passType = item["Passholder Type"]
-        if (passTypesMap.has(passType)) {
-            var v = passTypesMap.get(passType);
-            passTypesMap.set(passType, v+1);
-        } else {
-            passTypesMap.set(passType, 1);
-        }
-        });
-    keys = Array();
-    values = Array();
-    for (var[key, value] of stationFreq.entries()) {
-        keys.push(key);
-        values.push(values);
-    }
-    return {"passTypes": keys, "counts": values};
-}*/
 
 const numRoundTrips = (data) => {
     var roundCount = 0;
@@ -74,9 +55,12 @@ const numRoundTrips = (data) => {
     return roundCount;
 }
 
+const numOneWay = (data) => {
+    var one = numRoundTrips(data);
+    return 132428 - one;
+}
 
 
-
-module.exports = {mostPopularStation, numMonthlyPass, tripDistanceSetSpeed, numRoundTrips, main}
+module.exports = {mostPopularStation, numMonthlyPass, tripDistanceSetSpeed, numRoundTrips, numOneWay, main}
 
 

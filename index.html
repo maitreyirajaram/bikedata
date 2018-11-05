@@ -33,7 +33,7 @@
   </tr>
   <tr>
     <td>One Way Trip</td>
-    <td>500</td>
+    <td><div id="oneway"></div></td>
   </tr>
 </table>
 
@@ -44,16 +44,19 @@
         var numOfPasses = numMonthlyPass(data);
         var distance = tripDistanceSetSpeed(data);
         var roundTrip = numRoundTrips(data);
+        var oneWay = numOneWay(data);
         console.log("Start station" + mostPopularStartingStation);
         console.log("Ending station" + mostPopularEndingStation);
         console.log("Num passes" + numOfPasses);
         console.log("Avg distance" + distance);
         console.log("Round Trip" + roundTrip);
+        console.log("One Way" + oneWay);
         document.getElementById('startstn').innerHTML = mostPopularStartingStation;
         document.getElementById('endstn').innerHTML = mostPopularEndingStation;
         document.getElementById('numpass').innerHTML = numOfPasses;
         document.getElementById('avgdist').innerHTML = distance;
         document.getElementById('roundtrip').innerHTML = roundTrip;
+        document.getElementById('oneway').innerHTML = oneWay;
 
 
     });
