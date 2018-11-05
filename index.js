@@ -20,12 +20,12 @@ const mostPopularStation = (data, fieldName) => {
     return stnMaxCount;
  }
 const numMonthlyPass = (data) => {
-    var FlexMonthlyPassCount = 0;
+    var flexMonthlyPassCount = 0;
     data.forEach(function(item){
         if((item["Passholder Type"] === ("Monthly Pass")) || (item["Passholder Type"] === ("Flex Pass"))){
-            FlexMonthlyPassCount++;}
+            flexMonthlyPassCount++;}
         });
-    return FlexMonthlyPassCount;
+    return flexMonthlyPassCount;
 }
 
 // Assuming that the biker travels 15.5 km/h, obtained from: https://en.wikipedia.org/wiki/Bicycle_performance#Typical_speeds
