@@ -19,7 +19,21 @@
 <img src = "wheels.jpg" width = "120" height = "128">
 <script src="https://d3js.org/d3.v3.min.js"  charset="utf-8"></script>
 <script src="index.js"  charset="utf-8"></script>
-<div id="chart"></div>
+<table style="width:100%">
+  <caption>Monthly savings</caption>
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td>February</td>
+    <td>$50</td>
+  </tr>
+</table>
 <script>
     d3.csv("metro-bike-share-trip-data.csv", function(data) {
         var mostPopularStartingStation = mostPopularStation(data, "Starting Station ID");
