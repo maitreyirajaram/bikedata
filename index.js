@@ -45,6 +45,36 @@ const tripDistanceSetSpeed = (data) => {
     return Math.round(totalDistance/noOfTrips);
 }
 
+/*const passTypesData = (data) => {
+    passTypesMap = new Map();
+    data.forEach(function(item){
+        passType = item["Passholder Type"]
+        if (passTypesMap.has(passType)) {
+            var v = passTypesMap.get(passType);
+            passTypesMap.set(passType, v+1);
+        } else {
+            passTypesMap.set(passType, 1);
+        }
+        });
+    keys = Array();
+    values = Array();
+    for (var[key, value] of stationFreq.entries()) {
+        keys.push(key);
+        values.push(values);
+    }
+    return {"passTypes": keys, "counts": values};
+}*/
+var chart = c3.generate({
+    data: {
+        columns: [
+            ['data1', 90, 99, 87, 78, 89, 67, 85, 67, 85, 100]
+        ],
+        type: 'bar'
+    }
+});
+
+
+
 
 module.exports = {mostPopularStation, numMonthlyPass, tripDistanceSetSpeed, main}
 
