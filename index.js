@@ -64,18 +64,19 @@ const tripDistanceSetSpeed = (data) => {
     }
     return {"passTypes": keys, "counts": values};
 }*/
-var chart = c3.generate({
-    data: {
-        columns: [
-            ['data1', 90, 99, 87, 78, 89, 67, 85, 67, 85, 100]
-        ],
-        type: 'bar'
-    }
-});
+
+const numRoundTrips = (data) => {
+    var roundCount = 0;
+    data.forEach(function(item){
+        if((item["Trip Route Category"] === ("Round Trip")) ){
+            roundCount++;}
+        });
+    return roundCount;
+}
 
 
 
 
-module.exports = {mostPopularStation, numMonthlyPass, tripDistanceSetSpeed, main}
+module.exports = {mostPopularStation, numMonthlyPass, tripDistanceSetSpeed, numRoundTrips, main}
 
 
