@@ -1,8 +1,20 @@
 <html>
+<style>
+    body {
+        color: red;
+        }
+        h1{
+        color: #00FF00; }
+        p{
+        color: rgb(0, 0, 255)
+        }
+</style>
 <body>
+<h1>Bike Sharing: Analysis of Metro Bike Sharing Trip Data Obtained from Users </h1>
+<p>The following is an analysis of data obtained from a sample of 132428 bike share users. </p>
 <div>Most Popular Start Station:</div><div id="startstn"></div>
 <div>Most Popular End Station:</div><div id="endstn"></div>
-<div>Number of Monthly Pass and Flex Pass holders:</div><div id="numpass"></div>
+<div>Analysis of Routine Usage, Number of Monthly Pass and Flex Pass Holders:</div><div id="numpass"></div>
 <div>Avg Distance in kilometers:</div><div id="avgdist"></div>
 <script src="https://d3js.org/d3.v3.min.js"  charset="utf-8"></script>
 <script src="index.js"  charset="utf-8"></script>
@@ -23,4 +35,5 @@
     });
 </script>
 </body>
+
 </html>
