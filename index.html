@@ -19,6 +19,9 @@
 <img src = "wheels.jpg" width = "120" height = "128">
 <script src="https://d3js.org/d3.v3.min.js"  charset="utf-8"></script>
 <script src="index.js"  charset="utf-8"></script>
+<canvas id="canvasId"></canvas>
+    <!--[if IE]><script src="excanvas.js"></script><![endif]-->
+    <script src="barGraph.js"></script>
 <script>
     d3.csv("metro-bike-share-trip-data.csv", function(data) {
         var mostPopularStartingStation = mostPopularStation(data, "Starting Station ID");
@@ -33,6 +36,15 @@
         document.getElementById('endstn').innerHTML = mostPopularEndingStation;
         document.getElementById('numpass').innerHTML = numOfPasses;
         document.getElementById('avgdist').innerHTML = distance;
+        var cxt = document.getElementById("canvasId").getContext("2d");
+
+var graph = new BarGraph(ctx);
+graph.margin = 2;
+graph.width = 450;
+graph.height = 150;
+graph.xAxisLabelArr = ["Monthly Pass", "Flex Pass", "Walk-Up"];
+graph.update([3, 5, 3]);
+
     });
 </script>
 </body>
