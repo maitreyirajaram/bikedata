@@ -1,13 +1,13 @@
 <html>
 <body>
 <div>Most popular start station:</div><div id="startstn"></div>
-<div>Most popular end station:</div>:<div id="endstn"></div>
-<div>Number of monthly pass holders:</div>:<div id="numpass"></div>
-<div>Avg distance:</div>:<div id="avgdist"></div>
+<div>Most popular end station:</div><div id="endstn"></div>
+<div>Number of monthly pass holders:</div><div id="numpass"></div>
+<div>Avg distance:</div><div id="avgdist"></div>
 <script src="https://d3js.org/d3.v3.min.js"  charset="utf-8"></script>
 <script src="index.js"  charset="utf-8"></script>
 <script>
-    d3.csv("https://mattieraj.github.io/DojoTest/metro-bike-share-trip-data.csv", function(data) {
+    d3.csv("metro-bike-share-trip-data.csv", function(data) {
         var mostPopularStartingStation = mostPopularStation(data, "Starting Station ID");
         var mostPopularEndingStation = mostPopularStation(data, "Ending Station ID");
         var numOfPasses = numMonthlyPass(data);
