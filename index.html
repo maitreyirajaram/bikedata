@@ -1,14 +1,26 @@
 <html>
-<head>
-    <script type = "text/javascript" src = "https://d3js.org/d3.v3.min.js">
-        alert("hello");
-        d3.csv("https://mattieraj.github.io/DojoTest/metro-bike-share-trip-data.csv", function(data) {
-            alert("data downloaded");
-            console.log(data[0]);
-    });
-    </script>
-</head>
 <body>
-Testing
+<div>Most popular start station:</div><div id="startstn"></div>
+<div>Most popular end station:</div>:<div id="endstn"></div>
+<div>Number of monthly pass holders:</div>:<div id="numpass"></div>
+<div>Avg distance:</div>:<div id="avgdist"></div>
+<script src="https://d3js.org/d3.v3.min.js"  charset="utf-8"></script>
+<script src="index.js"  charset="utf-8"></script>
+<script>
+    d3.csv("https://mattieraj.github.io/DojoTest/metro-bike-share-trip-data.csv", function(data) {
+        var mostPopularStartingStation = mostPopularStation(data, "Starting Station ID");
+        var mostPopularEndingStation = mostPopularStation(data, "Ending Station ID");
+        var numOfPasses = numMonthlyPass(data);
+        var distance = tripDistanceSetSpeed(data);
+        console.log("Start station" + mostPopularStartingStation);
+        console.log("Ending station" + mostPopularEndingStation);
+        console.log("Num passes" + numOfPasses);
+        console.log("Avg distance" + distance);
+        document.getElementById('startstn').innerHTML = mostPopularStartingStation;
+        document.getElementById('endstn').innerHTML = mostPopularEndingStation;
+        document.getElementById('numpass').innerHTML = numOfPasses;
+        document.getElementById('avgdist').innerHTML = distance;
+    });
+</script>
 </body>
 </html>

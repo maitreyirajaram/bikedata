@@ -1,5 +1,3 @@
-const d3 = require('d3');
-
 const mostPopularStation = (data, fieldName) => {
     var stationFreq = new Map();
     data.forEach(function(item){ //function (...)
@@ -47,18 +45,6 @@ const tripDistanceSetSpeed = (data) => {
     return Math.round(totalDistance/noOfTrips);
 }
 
-const main = () => {
-    d3.csv("https://mattieraj.github.io/DojoTest/metro-bike-share-trip-data.csv", function(data) {
-        var mostPopularStartingStation = mostPopularStation(data, "Starting Station ID");
-        var mostPopularEndingStation = mostPopularStation(data, "Ending Station ID");
-        var numOfPasses = numMonthlyPass(data);
-        var distance = tripDistanceSetSpeed(data);
-        console.log("Start station" + mostPopularStartingStation);
-        console.log("Ending station" + mostPopularEndingStation);
-        console.log("Num passes" + numOfPasses);
-        console.log("Avg distance" + distance);
-    });
-}
 
 module.exports = {mostPopularStation, numMonthlyPass, tripDistanceSetSpeed, main}
 
